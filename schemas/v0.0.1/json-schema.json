@@ -1,0 +1,213 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "todo",
+  "title": "todo",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "Properties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Objektname": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Adresse": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Hausnummer": {
+            "description": "todo",
+            "type": "string"
+          },
+          "PLZ": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Stadt": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Grundstücksgröße in qm": {
+            "description": "todo",
+            "type": "number"
+          },
+          "Baujahr": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Modernisierung": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Nutzungsart": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Broker": {
+            "description": "todo",
+            "type": "string"
+          },
+          "Fee": {
+            "description": "todo",
+            "type": "number"
+          },
+          "Mieterliste": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Mietername": {
+                  "description": "todo",
+                  "type": "string"
+                },
+                "Nutzungsart": {
+                  "description": "todo",
+                  "type": "string"
+                },
+                "Flächenname": {
+                  "description": "todo",
+                  "type": "string"
+                },
+                "Vermietete Fläche in sqm": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "Vermietbare Fläche in sqm": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "Vermietete Einheiten": {
+                  "description": "todo",
+                  "type": "integer"
+                },
+                "Vermietbare Einheiten": {
+                  "description": "todo",
+                  "type": "integer"
+                },
+                "Nettomiete pro sqm": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "Nettomiete pro Einheit": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "Nettomonatsmiete": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "Nettojahresmiete": {
+                  "description": "todo",
+                  "type": "number"
+                },
+                "MwSt.": {
+                  "description": "todo",
+                  "type": "boolean"
+                },
+                "Mietbeginn": {
+                  "description": "todo",
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
+                },
+                "Mietende": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
+                },
+                "Sonderkündigungs-\nrecht": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
+                },
+                "Interval \n(in Monaten)": {
+                  "description": "todo",
+                  "type": "string"
+                },
+                "Kommentar": {
+                  "description": "todo",
+                  "type": "string"
+                },
+                "Anzahl Optionen": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Option in Monaten": {
+                        "description": "todo",
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "Option in Monaten"
+                    ]
+                  }
+                },
+                "Anpassungs": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Anpassungstyp": {
+                        "description": "todo",
+                        "type": "string"
+                      },
+                      "Index": {
+                        "description": "todo",
+                        "type": "string"
+                      },
+                      "Anpassungsfaktor": {
+                        "description": "todo",
+                        "type": "string"
+                      },
+                      "Anpassungsgrad": {
+                        "description": "todo",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "Anpassungstyp",
+                      "Index",
+                      "Anpassungsfaktor",
+                      "Anpassungsgrad"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "Mietername",
+                "Nutzungsart",
+                "Flächenname",
+                "Vermietete Fläche in sqm",
+                "Vermietbare Fläche in sqm",
+                "Vermietete Einheiten",
+                "Vermietbare Einheiten",
+                "Nettomiete pro sqm",
+                "Nettomiete pro Einheit",
+                "Nettomonatsmiete",
+                "Nettojahresmiete",
+                "MwSt.",
+                "Mietbeginn",
+                "Mietende",
+                "Sonderkündigungs-\nrecht",
+                "Interval \n(in Monaten)",
+                "Kommentar",
+                "Anzahl Optionen",
+                "Anpassungs"
+              ]
+            }
+          }
+        },
+        "required": [
+          "Objektname",
+          "Adresse",
+          "Stadt",
+          "Nutzungsart"
+        ]
+      }
+    }
+  },
+  "required": [
+    "Properties"
+  ]
+}
