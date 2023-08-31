@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/BuiltAPI/transaction-data-model/blob/main/schemas/v0.0.1/json-schema.json",
-  "title": "todo",
+  "title": "Transaction Data Model v0.0.1",
   "additionalProperties": false,
   "type": "object",
   "properties": {
@@ -12,46 +12,79 @@
         "properties": {
           "Objektname": {
             "description": "todo",
+            "examples": [
+              "F39"
+            ],
             "type": "string"
           },
           "Adresse": {
             "description": "todo",
+            "examples": [
+              "Fasanenstraße"
+            ],
             "type": "string"
           },
           "Hausnummer": {
             "description": "todo",
+            "examples": [
+              "39"
+            ],
             "type": "string"
           },
           "PLZ": {
             "description": "todo",
+            "examples": [
+              "10623"
+            ],
             "type": "string"
           },
           "Stadt": {
             "description": "todo",
+            "examples": [
+              "Berlin"
+            ],
             "type": "string"
           },
           "Grundstücksgröße in qm": {
             "description": "todo",
+            "examples": [
+              10088
+            ],
             "type": "number"
           },
           "Baujahr": {
             "description": "todo",
+            "examples": [
+              "1975"
+            ],
             "type": "string"
           },
           "Modernisierung": {
             "description": "todo",
+            "examples": [
+              "2020-2021"
+            ],
             "type": "string"
           },
           "Nutzungsart": {
             "description": "todo",
+            "examples": [
+              "Büro"
+            ],
             "type": "string"
           },
           "Broker": {
             "description": "todo",
+            "examples": [
+              "Max Muster Makler"
+            ],
             "type": "string"
           },
           "Fee": {
             "description": "todo",
+            "examples": [
+              5
+            ],
             "type": "number"
           },
           "Mieterliste": {
@@ -61,71 +94,124 @@
               "properties": {
                 "Mietername": {
                   "description": "todo",
+                  "examples": [
+                    "Lieschen Müller Immobilien GmbH"
+                  ],
                   "type": "string"
                 },
                 "Nutzungsart": {
                   "description": "todo",
+                  "examples": [
+                    "Büro"
+                  ],
                   "type": "string"
                 },
                 "Flächenname": {
                   "description": "todo",
+                  "examples": [
+                    "04.-06. OG  Büro"
+                  ],
                   "type": "string"
                 },
                 "Vermietete Fläche in sqm": {
                   "description": "todo",
+                  "examples": [
+                    3847.26
+                  ],
                   "type": "number"
                 },
                 "Vermietbare Fläche in sqm": {
                   "description": "todo",
+                  "examples": [
+                    3847.26
+                  ],
                   "type": "number"
                 },
                 "Vermietete Einheiten": {
                   "description": "todo",
+                  "examples": [
+                    0
+                  ],
                   "type": "integer"
                 },
                 "Vermietbare Einheiten": {
                   "description": "todo",
+                  "examples": [
+                    0
+                  ],
                   "type": "integer"
                 },
                 "Nettomiete pro sqm": {
                   "description": "todo",
+                  "examples": [
+                    24.22
+                  ],
                   "type": "number"
                 },
                 "Nettomiete pro Einheit": {
                   "description": "todo",
+                  "examples": [
+                    0
+                  ],
                   "type": "number"
                 },
                 "Nettomonatsmiete": {
                   "description": "todo",
+                  "examples": [
+                    93180.64
+                  ],
                   "type": "number"
                 },
                 "Nettojahresmiete": {
                   "description": "todo",
+                  "examples": [
+                    93180.637
+                  ],
                   "type": "number"
                 },
                 "MwSt.": {
                   "description": "todo",
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "Mietbeginn": {
                   "description": "todo",
+                  "examples": [
+                    "2020-05-01T00:00:00"
+                  ],
                   "type": "string",
                   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
                 },
                 "Mietende": {
+                  "description": "todo",
+                  "examples": [
+                    "2025-04-30T00:00:00"
+                  ],
                   "type": "string",
                   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
                 },
                 "Sonderkündigungs-\nrecht": {
+                  "description": "todo",
+                  "examples": [
+                    "2023-04-30T00:00:00"
+                  ],
                   "type": "string",
                   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(([+-]\\d{2}(:?\\d{2})?)|Z)$"
                 },
                 "Interval \n(in Monaten)": {
                   "description": "todo",
+                  "examples": [
+                    "12.0"
+                  ],
                   "type": "string"
                 },
                 "Kommentar": {
                   "description": "todo",
+                  "examples": [
+                    "Sonderkündigungsrecht: 9 Monate Kündigungsfrist; Pönale i.H.v. gesamt EUR 20.000,00 brutto"
+                  ],
                   "type": "string"
                 },
                 "Anzahl Optionen": {
@@ -135,6 +221,9 @@
                     "properties": {
                       "Option in Monaten": {
                         "description": "todo",
+                        "examples": [
+                          60
+                        ],
                         "type": "number"
                       }
                     },
@@ -150,18 +239,30 @@
                     "properties": {
                       "Anpassungstyp": {
                         "description": "todo",
+                        "examples": [
+                          "Indexierung"
+                        ],
                         "type": "string"
                       },
                       "Index": {
                         "description": "todo",
+                        "examples": [
+                          "VPI2015M"
+                        ],
                         "type": "string"
                       },
                       "Anpassungsfaktor": {
                         "description": "todo",
+                        "examples": [
+                          "1.0"
+                        ],
                         "type": "string"
                       },
                       "Anpassungsgrad": {
                         "description": "todo",
+                        "examples": [
+                          "1.0"
+                        ],
                         "type": "string"
                       }
                     },
