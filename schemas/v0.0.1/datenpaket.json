@@ -1,0 +1,85 @@
+{
+  "deal": {
+    "dealName": "Demo Deal",
+    "documentDate": "2023-01-01"
+  },
+  "brokers": [
+    {
+      "companyName": "JLL",
+      "companyBusinessId": "HRB 123456",
+      "companyVatNumber": "DE 123456789",
+      "brokerGlobalId": "JLL",
+      "contacts": [
+        {
+          "contactName": "John Doe",
+          "contactPhone": "+41234567890",
+          "contactEmail": "john.doe@jll.com"
+        }
+      ]
+    }
+  ],
+  "portfolios": [
+    {
+      "portfolioID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
+      "portfolioName": "Prime Portfolio",
+      "assets": [
+        {
+          "assetID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
+          "label": "Demo Asset",
+          "street": "Fasanenstraße",
+          "buildingNumber": "122",
+          "postalCode": "10623",
+          "city": "Berlin",
+          "countryIso2": "DE",
+          "plotArea": 1100,
+          "grossBuildingArea": 10000,
+          "originalYearOfConstructionAsYearNumber": 2009,
+          "lastRefurbishmentDate": "Jun 2021",
+          "useTypePrimary": "Retail",
+          "valuationDate": "2023-01-01",
+          "offerDate": "2023-01-01",
+          "rentRoll": [
+            {
+              "contractID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
+              "tenantID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
+              "tenantName": "Supermarket",
+              "useTypePrimary": "Retail",
+              "areaID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
+              "label": "G-01",
+              "floor": 1,
+              "building": 1,
+              "leasedArea": 5000,
+              "lettableArea": 5000,
+              "leasedUnits":  5,
+              "lettableUnits": 10,
+              "unitType": "Bett",
+              "contractualRentPerSqm": 50,
+              "currencyIso3": "EUR",
+              "contractualRentPerUnit": 1500,
+              "contractualRent": 250000,
+              "contractualRentPerYear": 3000000,
+              "isVatLiable": true,
+              "leaseBeginDate": "2017-09-01",
+              "leaseEndDate": "2027-09-01",
+              "turnoverAdjType": "Fixed",
+              "rentIncreaseType": "CPI",
+              "baseIndex": 100,
+              "indexPassthrough": 0.03,
+              "indexMinimumAdjustmentInPercent": 0.03,
+              "rentAdjustmentFrequenceInMonths": 12,
+              "note": "Optional notes",
+              "operatorName": "Star Europe GmbH",
+              "isVacant": true,
+              "breakOptions": [
+                {
+                  "date": "2020-01-01",
+                  "notificationPeriodInMonths": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

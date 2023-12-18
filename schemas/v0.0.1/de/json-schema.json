@@ -1,0 +1,2305 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/BuiltAPI/transaction-data-model/blob/main/schemas/v0.0.1/json-schema.json",
+  "title": "Transaction Data Model v0.0.1",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "deal": {
+      "title": "",
+      "description": "",
+      "examples": [
+        ""
+      ],
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "dealName": {
+          "title": "Dealname",
+          "description": "",
+          "examples": [
+            "Demo Deal"
+          ],
+          "type": "string"
+        },
+        "documentDate": {
+          "title": "Datum des Dokuments",
+          "description": "",
+          "examples": [
+            "2023-01-01"
+          ],
+          "type": "string",
+          "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+        }
+      },
+      "required": [
+        "dealName",
+        "documentDate"
+      ]
+    },
+    "broker": {
+      "title": "",
+      "description": "",
+      "examples": [
+        ""
+      ],
+      "type": "array",
+      "items": {
+        "title": "",
+        "description": "",
+        "examples": [
+          ""
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "title": "Name des Brokers",
+            "description": "",
+            "examples": [
+              "JLL"
+            ],
+            "type": "string"
+          },
+          "companyBusinessId": {
+            "title": "Makler-Geschäfts-ID",
+            "description": "",
+            "examples": [
+              "HRB 123456"
+            ],
+            "type": "string"
+          },
+          "brokerGlobalId": {
+            "title": "Globale Broker-ID",
+            "description": "",
+            "examples": [
+              "JLL"
+            ],
+            "type": "string"
+          },
+          "contact": {
+            "title": "",
+            "description": "",
+            "examples": [
+              ""
+            ],
+            "type": "array",
+            "items": {
+              "title": "",
+              "description": "",
+              "examples": [
+                ""
+              ],
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "contactName": {
+                  "title": "Kontaktname",
+                  "description": "",
+                  "examples": [
+                    "John Doe"
+                  ],
+                  "type": "string"
+                },
+                "contactPhone": {
+                  "title": "Kontakt Telefonnummer",
+                  "description": "",
+                  "examples": [
+                    "+41234567890"
+                  ],
+                  "type": "string"
+                },
+                "contactEmail": {
+                  "title": "Kontakt-E-Mailadresse",
+                  "description": "",
+                  "examples": [
+                    "john.doe@jll.com"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "portfolios": {
+      "title": "",
+      "description": "",
+      "examples": [
+        ""
+      ],
+      "type": "array",
+      "items": {
+        "title": "",
+        "description": "",
+        "examples": [
+          ""
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "portfolioID": {
+            "title": "Portfolio ID",
+            "description": "",
+            "examples": [
+              "56a5a31b-d850-40e6-a9db-dc26cfcda471"
+            ],
+            "type": "string"
+          },
+          "portfolioName": {
+            "title": "Portfolioname",
+            "description": "Name des Portfolios (oder \\\"Projekts\\\"), der angezeigt wird und die \\\"übergeordnete\\\" Einheit der Assets darstellt.",
+            "examples": [
+              "Prime Portfolio"
+            ],
+            "type": "string"
+          },
+          "assets": {
+            "title": "",
+            "description": "",
+            "examples": [
+              ""
+            ],
+            "type": "array",
+            "items": {
+              "title": "",
+              "description": "",
+              "examples": [
+                ""
+              ],
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "assetID": {
+                  "title": "Objekt ID",
+                  "description": "",
+                  "examples": [
+                    "56a5a31b-d850-40e6-a9db-dc26cfcda471"
+                  ],
+                  "type": "string"
+                },
+                "label": {
+                  "title": "Objektname",
+                  "description": "Angegebener Name des Assets durch den Erstellers",
+                  "examples": [
+                    "F39"
+                  ],
+                  "type": "string"
+                },
+                "street": {
+                  "title": "Straßenname",
+                  "description": "Vom Ersteller angegebener Straßenname",
+                  "examples": [
+                    "Fasanenstraße"
+                  ],
+                  "type": "string"
+                },
+                "buildingNumber": {
+                  "title": "Hausnummer",
+                  "description": "Vom Ersteller angegebene Hausnummer",
+                  "examples": [
+                    "122"
+                  ],
+                  "type": "string"
+                },
+                "postalCode": {
+                  "title": "PLZ",
+                  "description": "Vom Ersteller angegebene Postleitzahl",
+                  "examples": [
+                    "10623"
+                  ],
+                  "type": "string"
+                },
+                "city": {
+                  "title": "Stadt",
+                  "description": "Vom Ersteller angegebene Stadt",
+                  "examples": [
+                    "Berlin"
+                  ],
+                  "type": "string"
+                },
+                "countryIso2": {
+                  "title": "Land",
+                  "description": "Vom Ersteller angegebenes Land",
+                  "examples": [
+                    "DE"
+                  ],
+                  "anyOf": [
+                    {
+                      "const": "AF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AX",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AQ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BB",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BJ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "BI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CX",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DJ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "EC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "EG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GQ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ER",
+                      "type": "string"
+                    },
+                    {
+                      "const": "EE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ET",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FJ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "DE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GP",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "HU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ID",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IQ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "IT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "JM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "JP",
+                      "type": "string"
+                    },
+                    {
+                      "const": "JE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "JO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KP",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LB",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ML",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MQ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "YT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MX",
+                      "type": "string"
+                    },
+                    {
+                      "const": "FM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NP",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "MP",
+                      "type": "string"
+                    },
+                    {
+                      "const": "NO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "OM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "QA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "RE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "RO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "RU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "RW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "KN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "PM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "WS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ST",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SB",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ZA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GS",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ES",
+                      "type": "string"
+                    },
+                    {
+                      "const": "LK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SD",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SJ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "CH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "SY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TW",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TJ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TL",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TK",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TO",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TT",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TR",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TC",
+                      "type": "string"
+                    },
+                    {
+                      "const": "TV",
+                      "type": "string"
+                    },
+                    {
+                      "const": "UG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "UA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "GB",
+                      "type": "string"
+                    },
+                    {
+                      "const": "US",
+                      "type": "string"
+                    },
+                    {
+                      "const": "UM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "UY",
+                      "type": "string"
+                    },
+                    {
+                      "const": "UZ",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VU",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VN",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VG",
+                      "type": "string"
+                    },
+                    {
+                      "const": "VI",
+                      "type": "string"
+                    },
+                    {
+                      "const": "WF",
+                      "type": "string"
+                    },
+                    {
+                      "const": "EH",
+                      "type": "string"
+                    },
+                    {
+                      "const": "YE",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ZM",
+                      "type": "string"
+                    },
+                    {
+                      "const": "ZW",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "plotArea": {
+                  "title": "Grundstücksgröße in qm",
+                  "description": "Gibt die Grundstücksfäche eines Informationsobjektes an",
+                  "examples": [
+                    1100
+                  ],
+                  "type": "number"
+                },
+                "grossBuildingArea": {
+                  "title": "",
+                  "description": "",
+                  "examples": [
+                    10000
+                  ],
+                  "type": "number"
+                },
+                "originalYearOfConstructionAsYearNumber": {
+                  "title": "Baujahr",
+                  "description": "Ursprungsbaujahr (des ältesten Baukörpers des Objekts) als 4-stellige Jahreszahl",
+                  "examples": [
+                    2009
+                  ],
+                  "type": "integer"
+                },
+                "lastRefurbishmentDate": {
+                  "title": "Modernisierung",
+                  "description": "Beschreibt das Datum, in dem umfangreiche Modernisierungen des Informationsobjektes zuletzt stattgefunden haben",
+                  "examples": [
+                    "Jun 2021"
+                  ],
+                  "type": "string"
+                },
+                "useTypePrimary": {
+                  "title": "Nutzungsart",
+                  "description": "Die Hauptnutzungsart kennzeichnet die Art und Weise, in der das Informationsobjekt vorrangig genutzt wird (gemäß BVI siehe Werte Tab)",
+                  "examples": [
+                    "Retail"
+                  ],
+                  "type": "string"
+                },
+                "valuationDate": {
+                  "title": "Stichtag",
+                  "description": "Der Stichtag beschreibt die Aktualität der Mieterliste und unterscheidet sich in der Regel vom Angebotsdatum",
+                  "examples": [
+                    "2023-01-01"
+                  ],
+                  "type": "string",
+                  "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+                },
+                "offerDate": {
+                  "title": "Angebotsdatum",
+                  "description": "",
+                  "examples": [
+                    "2023-09-11"
+                  ],
+                  "type": "string",
+                  "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+                },
+                "rentRoll": {
+                  "title": "",
+                  "description": "",
+                  "examples": [
+                    ""
+                  ],
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "description": "",
+                    "examples": [
+                      ""
+                    ],
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "contractID": {
+                        "title": "VertragsID",
+                        "description": "",
+                        "examples": [
+                          "56a5a31b-d850-40e6-a9db-dc26cfcda471"
+                        ],
+                        "type": "string"
+                      },
+                      "tenantID": {
+                        "title": "Mieter ID",
+                        "description": "",
+                        "examples": [
+                          "56a5a31b-d850-40e6-a9db-dc26cfcda471"
+                        ],
+                        "type": "string"
+                      },
+                      "tenantName": {
+                        "title": "Mietername",
+                        "description": "Vom Ersteller angegebener Mietername",
+                        "examples": [
+                          "Supermarket"
+                        ],
+                        "type": "string"
+                      },
+                      "useTypePrimary": {
+                        "title": "Nutzungsart",
+                        "description": "Die Nutzungsart kennzeichnet die Art und Weise, in der die Einheit vorrangig genutzt wird gemäß BVI siehe Werte Tab",
+                        "examples": [
+                          "Retail"
+                        ],
+                        "type": "string"
+                      },
+                      "areaID": {
+                        "title": "Flächen ID",
+                        "description": "",
+                        "examples": [
+                          "56a5a31b-d850-40e6-a9db-dc26cfcda471"
+                        ],
+                        "type": "string"
+                      },
+                      "label": {
+                        "title": "Flächenname",
+                        "description": "",
+                        "examples": [
+                          "G-01"
+                        ],
+                        "type": "string"
+                      },
+                      "floor": {
+                        "title": "Geschoss",
+                        "description": "",
+                        "examples": [
+                          1
+                        ],
+                        "type": "integer"
+                      },
+                      "building": {
+                        "title": "Bauteil",
+                        "description": "",
+                        "examples": [
+                          1
+                        ],
+                        "type": "integer"
+                      },
+                      "leasedArea": {
+                        "title": "Vermietete Fläche in m²",
+                        "description": "Gibt die Summe der vermieteten Flächen eines Informationsobjektes zum Stichtag an. Diese soll als Prüfkennziffer bezogen auf die übergebenen Mietverträge genutzt werden",
+                        "examples": [
+                          5000
+                        ],
+                        "type": "number"
+                      },
+                      "lettableArea": {
+                        "title": "Vermietbare Fläche in m²",
+                        "description": "Gibt die tatsächlich vermietbare Fläche des Informationsobjektes an, unabhängig von der konkreten Vermietungssituation zum Stichtag",
+                        "examples": [
+                          5000
+                        ],
+                        "type": "number"
+                      },
+                      "leasedUnits": {
+                        "title": "Vermietete Einheiten",
+                        "description": "Gibt die Anzahl vermieteter Einheiten eines Wirtschaftsobjektes an",
+                        "examples": [
+                          5
+                        ],
+                        "type": "integer"
+                      },
+                      "lettableUnits": {
+                        "title": "Vermietbare Einheiten",
+                        "description": "Gibt die Anzahl vermietbarer Einheiten an (z.B. bei Stellplätze) an",
+                        "examples": [
+                          10
+                        ],
+                        "type": "integer"
+                      },
+                      "unitType": {
+                        "title": "Art der Einheit",
+                        "description": "",
+                        "examples": [
+                          "Bett"
+                        ],
+                        "type": "string"
+                      },
+                      "contractualRentPerSqm": {
+                        "title": "Nettomiete pro m²",
+                        "description": "Summe der Nettovertragsmieten aller Mietverträge (ohne Abzug von Mietfreien Zeiten) der Liegenschaft zum Stichtag",
+                        "examples": [
+                          50
+                        ],
+                        "type": "number"
+                      },
+                      "currencyIso3": {
+                        "title": "Währung",
+                        "description": "",
+                        "examples": [
+                          "EUR"
+                        ],
+                        "anyOf": [
+                          {
+                            "const": "AED",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AFN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ALL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AMD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ANG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AOA",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ARS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AUD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AWG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "AZN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BAM",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BBD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BDT",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BGN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BHD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BIF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BMD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BND",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BOB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BOV",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BRL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BSD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BTN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BWP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BYN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "BZD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CAD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CDF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CHE",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CHF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CHW",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CLF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CLP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CNY",
+                            "type": "string"
+                          },
+                          {
+                            "const": "COP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "COU",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CRC",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CUP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CVE",
+                            "type": "string"
+                          },
+                          {
+                            "const": "CZK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "DJF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "DKK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "DOP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "DZD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "EGP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ERN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ETB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "EUR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "FJD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "FKP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GBP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GEL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GHS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GIP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GMD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GNF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GTQ",
+                            "type": "string"
+                          },
+                          {
+                            "const": "GYD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "HKD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "HNL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "HTG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "HUF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "IDR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ILS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "INR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "IQD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "IRR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ISK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "JMD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "JOD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "JPY",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KES",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KGS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KHR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KMF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KPW",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KRW",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KWD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KYD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "KZT",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LAK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LBP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LKR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LRD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LSL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "LYD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MAD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MDL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MGA",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MKD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MMK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MNT",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MOP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MRU",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MUR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MVR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MWK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MXN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MXV",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MYR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "MZN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NAD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NGN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NIO",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NOK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NPR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "NZD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "OMR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PAB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PEN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PGK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PHP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PKR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PLN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "PYG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "QAR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "RON",
+                            "type": "string"
+                          },
+                          {
+                            "const": "RSD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "RUB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "RWF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SAR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SBD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SCR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SDG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SEK",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SGD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SHP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SLE",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SLL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SOS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SRD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SSP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "STN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SVC",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SYP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "SZL",
+                            "type": "string"
+                          },
+                          {
+                            "const": "THB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TJS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TMT",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TND",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TOP",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TRY",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TTD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TWD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "TZS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UAH",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UGX",
+                            "type": "string"
+                          },
+                          {
+                            "const": "USD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "USN",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UYI",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UYU",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UYW",
+                            "type": "string"
+                          },
+                          {
+                            "const": "UZS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "VED",
+                            "type": "string"
+                          },
+                          {
+                            "const": "VES",
+                            "type": "string"
+                          },
+                          {
+                            "const": "VND",
+                            "type": "string"
+                          },
+                          {
+                            "const": "VUV",
+                            "type": "string"
+                          },
+                          {
+                            "const": "WST",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XAF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XAG",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XAU",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XBA",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XBB",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XBC",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XBD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XCD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XDR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XOF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XPD",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XPF",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XPT",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XSU",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XTS",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XUA",
+                            "type": "string"
+                          },
+                          {
+                            "const": "XXX",
+                            "type": "string"
+                          },
+                          {
+                            "const": "YER",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ZAR",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ZMW",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ZWL",
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "contractualRentPerUnit": {
+                        "title": "Nettomiete pro Einheit",
+                        "description": "",
+                        "examples": [
+                          1500
+                        ],
+                        "type": "number"
+                      },
+                      "contractualRent": {
+                        "title": "Nettomonatsmiete",
+                        "description": "",
+                        "examples": [
+                          250000
+                        ],
+                        "type": "number"
+                      },
+                      "contractualRentPerYear": {
+                        "title": "Nettojahresmiete",
+                        "description": "",
+                        "examples": [
+                          3000000
+                        ],
+                        "type": "number"
+                      },
+                      "isVatLiable": {
+                        "title": "MwSt.",
+                        "description": "",
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "leaseBeginDate": {
+                        "title": "Mietbeginn",
+                        "description": "Gibt das vertraglich festgelegte Anfangsdatum der Nutzung des Informationsobjekts unabhängig von gewährten mietfreien Zeiten dar",
+                        "examples": [
+                          "2017-09-01"
+                        ],
+                        "type": "string",
+                        "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+                      },
+                      "leaseEndDate": {
+                        "title": "Mietende",
+                        "description": "Gibt das vertraglich vereinbarte Enddatum der Nutzung des Informationsobjektes ohne Berücksichtigung vereinbarter mietfreier Zeiten an",
+                        "examples": [
+                          "2027-09-01"
+                        ],
+                        "type": "string",
+                        "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+                      },
+                      "turnoverAdjType": {
+                        "title": "Anpassungstyp",
+                        "description": "Gibt den Anpassungstyp innerhalb einer Umsatzmiete an (prozentual oder absolut).",
+                        "examples": [
+                          "Fixed"
+                        ],
+                        "type": "string"
+                      },
+                      "rentIncreaseType": {
+                        "title": "Anpassungstyp",
+                        "description": "Gibt den Anpassungstyp innerhalb einer Umsatzmiete an (prozentual oder absolut) / Gibt die Mieterhöhungsmethode zu einem Informationsobjekt an",
+                        "examples": [
+                          "CPI"
+                        ],
+                        "type": "string"
+                      },
+                      "baseIndex": {
+                        "title": "Index",
+                        "description": "Gibt die Ausgangsbasis des Indices (entspricht 100) eines Informationsobjektes an",
+                        "examples": [
+                          100
+                        ],
+                        "type": "number"
+                      },
+                      "indexPassthrough": {
+                        "title": "Anpassungsfaktor",
+                        "description": "Gibt an, in welcher Höhe der berechnete Differenzwert einer Indexerhöhung an den Mieter weitergegeben wird",
+                        "examples": [
+                          0.03
+                        ],
+                        "type": "number"
+                      },
+                      "indexMinimumAdjustmentInPercent": {
+                        "title": "Anpassungsgrad",
+                        "description": "Gibt die Mindestgröße der Veränderung des aktuellen Indexwertes in Prozent.zum letzten Indexstand an, die überschritten oder mindestens erreicht sein muss, damit eine Anpassung der Mietkondition erfolgen kann",
+                        "examples": [
+                          0.03
+                        ],
+                        "type": "number"
+                      },
+                      "rentAdjustmentFrequenceInMonths": {
+                        "title": "Interval (in Monaten)",
+                        "description": "Gibt den Mietanpassungsrhythmus an",
+                        "examples": [
+                          12
+                        ],
+                        "type": "integer"
+                      },
+                      "note": {
+                        "title": "Kommentar",
+                        "description": "Optionale Übergabe von Notizen zum Informationsobjekt",
+                        "examples": [
+                          "Optional notes"
+                        ],
+                        "type": "string"
+                      },
+                      "operatorName": {
+                        "title": "Betreiber",
+                        "description": "Name des Betreibers",
+                        "examples": [
+                          "Star Europe GmbH"
+                        ],
+                        "type": "string"
+                      },
+                      "isVacant": {
+                        "title": "Vermietungsstatus",
+                        "description": "",
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "breakOptions": {
+                        "title": "Sonderkündigungsrecht",
+                        "description": "Unter Option versteht man im deutschen Umsatzsteuerrecht die Behandlung eines steuerfrei gestellten Umsatz als steuerpflichtig. Ein Unternehmer kann bei der Option zur Steuerpflicht unter bestimmten Voraussetzungen gem. § 9 UStG den Verzicht einer Steuerbefreiung im Sinne von § 4 UStG erklären. Wenn in diesem Feld Ja angegeben wird, so ist die Miete netto zzgl. Ust. zu zahlen",
+                        "examples": [
+                          ""
+                        ],
+                        "type": "array",
+                        "items": {
+                          "title": "",
+                          "description": "",
+                          "examples": [
+                            ""
+                          ],
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "breakOptionDate": {
+                              "title": "",
+                              "description": "Gibt ein Datum an, zu dem der Mieter ein Sonderkündigungsrecht nutzen kann",
+                              "examples": [
+                                "2020-01-01"
+                              ],
+                              "type": "string",
+                              "pattern": "^\\d\\d\\d\\d-[0-1]\\d-[0-3]\\d$"
+                            },
+                            "breakOptionNotificationPeriodInMonths": {
+                              "title": "",
+                              "description": "Gibt das erste Vertragsende im Fall der Ausübung eines Optionsrechts an",
+                              "examples": [
+                                6
+                              ],
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": [
+                      "tenantName",
+                      "isVacant"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "label",
+                "street",
+                "buildingNumber",
+                "postalCode",
+                "city",
+                "countryIso2",
+                "plotArea",
+                "grossBuildingArea",
+                "originalYearOfConstructionAsYearNumber"
+              ]
+            }
+          }
+        },
+        "required": [
+          "portfolioName",
+          "assets"
+        ]
+      }
+    }
+  },
+  "required": [
+    "deal",
+    "portfolios"
+  ]
+}
