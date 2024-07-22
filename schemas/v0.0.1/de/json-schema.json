@@ -194,18 +194,48 @@
           "portfolioID": {
             "title": "Portfolio ID",
             "description": "unique id auf anbieterseite",
-            "examples": [
-              "56a5a31b-d850-40e6-a9db-dc26cfcda471"
-            ],
+            "example": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
             "type": "string"
           },
           "portfolioName": {
             "title": "Portfolioname",
             "description": "Name des Portfolios (oder \\\"Projekts\\\"), der angezeigt wird und die \\\"übergeordnete\\\" Einheit der Assets darstellt.",
-            "examples": [
-              "Prime Portfolio"
-            ],
+            "example": "Prime Portfolio",
             "type": "string"
+          },
+          "portfolioPrice": {
+            "title": "Angebotspreis",
+            "description": "Gesamtpreis des Angebots. Bei Portfolioverkauf ist es der Gesamtpreis des Portfolios. Bei Einzelverkauf ist es der Preis des Assets.",
+            "$ref": "#/$defs/price",
+            "example": {
+              "value": 1000000,
+              "currency": "EUR"
+            }
+          },
+          "courtage": {
+            "title": "Provision",
+            "description": "Fällige Provision für das Angebot",
+            "type": "object",
+            "properties": {
+              "hasCourtage": {
+                "title": "Provision vorhanden",
+                "description": "Gibt an, ob eine Provision fällig ist",
+                "type": "boolean",
+                "example": true
+              },
+              "courtage": {
+                "title": "Provisionshöhe",
+                "description": "Die Höhe der Provision in Prozent.",
+                "example": 3.57,
+                "type": "number"
+              },
+              "courtageNote": {
+                "title": "Provisionshinweis",
+                "description": "Hinweise bezgl. der Provision.",
+                "example": "Die Provision beträgt 3,57% vom Kaufpreis zzgl. MwSt. und ist vom Käufer zu zahlen.",
+                "type": "string"
+              }
+            }
           },
           "assets": {
             "title": "",
@@ -217,9 +247,7 @@
             "items": {
               "title": "",
               "description": "",
-              "examples": [
-                ""
-              ],
+              "example": "",
               "additionalProperties": false,
               "type": "object",
               "properties": {
@@ -238,6 +266,15 @@
                     "F39"
                   ],
                   "type": "string"
+                },
+                "assetPrice": {
+                  "title": "Asset Preis",
+                  "description": "Der Preis für das einzelne Asset. Nur bei Einzelverkauf relevant.",
+                  "$ref": "#/$defs/price",
+                  "example": {
+                    "value": 5000000,
+                    "currency": "EUR"
+                  }
                 },
                 "plotArea": {
                   "title": "Grundstücksgröße in qm",
@@ -1537,730 +1574,13 @@
                         ],
                         "type": "number"
                       },
-                      "currencyIso3": {
+                      "currency": {
                         "title": "Währung",
-                        "description": "",
+                        "description": "Gibt die Währung an, in der die Miete angegeben ist",
                         "examples": [
                           "EUR"
                         ],
-                        "anyOf": [
-                          {
-                            "const": "AED",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AFN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ALL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AMD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ANG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AOA",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ARS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AUD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AWG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "AZN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BAM",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BBD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BDT",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BGN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BHD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BIF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BMD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BND",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BOB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BOV",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BRL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BSD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BTN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BWP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BYN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "BZD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CAD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CDF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CHE",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CHF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CHW",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CLF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CLP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CNY",
-                            "type": "string"
-                          },
-                          {
-                            "const": "COP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "COU",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CRC",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CUP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CVE",
-                            "type": "string"
-                          },
-                          {
-                            "const": "CZK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "DJF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "DKK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "DOP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "DZD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "EGP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ERN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ETB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "EUR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "FJD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "FKP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GBP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GEL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GHS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GIP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GMD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GNF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GTQ",
-                            "type": "string"
-                          },
-                          {
-                            "const": "GYD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "HKD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "HNL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "HTG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "HUF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "IDR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ILS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "INR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "IQD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "IRR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ISK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "JMD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "JOD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "JPY",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KES",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KGS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KHR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KMF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KPW",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KRW",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KWD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KYD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "KZT",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LAK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LBP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LKR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LRD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LSL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "LYD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MAD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MDL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MGA",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MKD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MMK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MNT",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MOP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MRU",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MUR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MVR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MWK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MXN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MXV",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MYR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "MZN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NAD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NGN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NIO",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NOK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NPR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "NZD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "OMR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PAB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PEN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PGK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PHP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PKR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PLN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "PYG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "QAR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "RON",
-                            "type": "string"
-                          },
-                          {
-                            "const": "RSD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "RUB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "RWF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SAR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SBD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SCR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SDG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SEK",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SGD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SHP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SLE",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SLL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SOS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SRD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SSP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "STN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SVC",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SYP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "SZL",
-                            "type": "string"
-                          },
-                          {
-                            "const": "THB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TJS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TMT",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TND",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TOP",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TRY",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TTD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TWD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "TZS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UAH",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UGX",
-                            "type": "string"
-                          },
-                          {
-                            "const": "USD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "USN",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UYI",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UYU",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UYW",
-                            "type": "string"
-                          },
-                          {
-                            "const": "UZS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "VED",
-                            "type": "string"
-                          },
-                          {
-                            "const": "VES",
-                            "type": "string"
-                          },
-                          {
-                            "const": "VND",
-                            "type": "string"
-                          },
-                          {
-                            "const": "VUV",
-                            "type": "string"
-                          },
-                          {
-                            "const": "WST",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XAF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XAG",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XAU",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XBA",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XBB",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XBC",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XBD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XCD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XDR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XOF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XPD",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XPF",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XPT",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XSU",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XTS",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XUA",
-                            "type": "string"
-                          },
-                          {
-                            "const": "XXX",
-                            "type": "string"
-                          },
-                          {
-                            "const": "YER",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ZAR",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ZMW",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ZWL",
-                            "type": "string"
-                          }
-                        ]
+                        "$ref": "#/$defs/currencyIso3"
                       },
                       "contractualRentPerUnit": {
                         "title": "Nettomiete pro Einheit",
@@ -2470,5 +1790,750 @@
   "required": [
     "deal",
     "portfolios"
-  ]
+  ],
+  "$defs": {
+    "price": {
+      "title": "Der Kaufpreis und die Währung des Angebots.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Betrag",
+          "description": "Der Betrag für Kaufpreis.",
+          "example": 10000000,
+          "type": "number"
+        },
+        "currency": {
+          "title": "Währung",
+          "description": "Die Währung des Preises als ISO 4217 Code.",
+          "example": "EUR",
+          "$ref": "#/$defs/currencyIso3"
+        }
+      }
+    },
+    "currencyIso3": {
+      "title": "Währung",
+      "description": "Die Währung des Betrags als ISO 4217 Code.",
+      "examples": [
+        "EUR"
+      ],
+      "anyOf": [
+        {
+          "const": "AED",
+          "type": "string"
+        },
+        {
+          "const": "AFN",
+          "type": "string"
+        },
+        {
+          "const": "ALL",
+          "type": "string"
+        },
+        {
+          "const": "AMD",
+          "type": "string"
+        },
+        {
+          "const": "ANG",
+          "type": "string"
+        },
+        {
+          "const": "AOA",
+          "type": "string"
+        },
+        {
+          "const": "ARS",
+          "type": "string"
+        },
+        {
+          "const": "AUD",
+          "type": "string"
+        },
+        {
+          "const": "AWG",
+          "type": "string"
+        },
+        {
+          "const": "AZN",
+          "type": "string"
+        },
+        {
+          "const": "BAM",
+          "type": "string"
+        },
+        {
+          "const": "BBD",
+          "type": "string"
+        },
+        {
+          "const": "BDT",
+          "type": "string"
+        },
+        {
+          "const": "BGN",
+          "type": "string"
+        },
+        {
+          "const": "BHD",
+          "type": "string"
+        },
+        {
+          "const": "BIF",
+          "type": "string"
+        },
+        {
+          "const": "BMD",
+          "type": "string"
+        },
+        {
+          "const": "BND",
+          "type": "string"
+        },
+        {
+          "const": "BOB",
+          "type": "string"
+        },
+        {
+          "const": "BOV",
+          "type": "string"
+        },
+        {
+          "const": "BRL",
+          "type": "string"
+        },
+        {
+          "const": "BSD",
+          "type": "string"
+        },
+        {
+          "const": "BTN",
+          "type": "string"
+        },
+        {
+          "const": "BWP",
+          "type": "string"
+        },
+        {
+          "const": "BYN",
+          "type": "string"
+        },
+        {
+          "const": "BZD",
+          "type": "string"
+        },
+        {
+          "const": "CAD",
+          "type": "string"
+        },
+        {
+          "const": "CDF",
+          "type": "string"
+        },
+        {
+          "const": "CHE",
+          "type": "string"
+        },
+        {
+          "const": "CHF",
+          "type": "string"
+        },
+        {
+          "const": "CHW",
+          "type": "string"
+        },
+        {
+          "const": "CLF",
+          "type": "string"
+        },
+        {
+          "const": "CLP",
+          "type": "string"
+        },
+        {
+          "const": "CNY",
+          "type": "string"
+        },
+        {
+          "const": "COP",
+          "type": "string"
+        },
+        {
+          "const": "COU",
+          "type": "string"
+        },
+        {
+          "const": "CRC",
+          "type": "string"
+        },
+        {
+          "const": "CUP",
+          "type": "string"
+        },
+        {
+          "const": "CVE",
+          "type": "string"
+        },
+        {
+          "const": "CZK",
+          "type": "string"
+        },
+        {
+          "const": "DJF",
+          "type": "string"
+        },
+        {
+          "const": "DKK",
+          "type": "string"
+        },
+        {
+          "const": "DOP",
+          "type": "string"
+        },
+        {
+          "const": "DZD",
+          "type": "string"
+        },
+        {
+          "const": "EGP",
+          "type": "string"
+        },
+        {
+          "const": "ERN",
+          "type": "string"
+        },
+        {
+          "const": "ETB",
+          "type": "string"
+        },
+        {
+          "const": "EUR",
+          "type": "string"
+        },
+        {
+          "const": "FJD",
+          "type": "string"
+        },
+        {
+          "const": "FKP",
+          "type": "string"
+        },
+        {
+          "const": "GBP",
+          "type": "string"
+        },
+        {
+          "const": "GEL",
+          "type": "string"
+        },
+        {
+          "const": "GHS",
+          "type": "string"
+        },
+        {
+          "const": "GIP",
+          "type": "string"
+        },
+        {
+          "const": "GMD",
+          "type": "string"
+        },
+        {
+          "const": "GNF",
+          "type": "string"
+        },
+        {
+          "const": "GTQ",
+          "type": "string"
+        },
+        {
+          "const": "GYD",
+          "type": "string"
+        },
+        {
+          "const": "HKD",
+          "type": "string"
+        },
+        {
+          "const": "HNL",
+          "type": "string"
+        },
+        {
+          "const": "HTG",
+          "type": "string"
+        },
+        {
+          "const": "HUF",
+          "type": "string"
+        },
+        {
+          "const": "IDR",
+          "type": "string"
+        },
+        {
+          "const": "ILS",
+          "type": "string"
+        },
+        {
+          "const": "INR",
+          "type": "string"
+        },
+        {
+          "const": "IQD",
+          "type": "string"
+        },
+        {
+          "const": "IRR",
+          "type": "string"
+        },
+        {
+          "const": "ISK",
+          "type": "string"
+        },
+        {
+          "const": "JMD",
+          "type": "string"
+        },
+        {
+          "const": "JOD",
+          "type": "string"
+        },
+        {
+          "const": "JPY",
+          "type": "string"
+        },
+        {
+          "const": "KES",
+          "type": "string"
+        },
+        {
+          "const": "KGS",
+          "type": "string"
+        },
+        {
+          "const": "KHR",
+          "type": "string"
+        },
+        {
+          "const": "KMF",
+          "type": "string"
+        },
+        {
+          "const": "KPW",
+          "type": "string"
+        },
+        {
+          "const": "KRW",
+          "type": "string"
+        },
+        {
+          "const": "KWD",
+          "type": "string"
+        },
+        {
+          "const": "KYD",
+          "type": "string"
+        },
+        {
+          "const": "KZT",
+          "type": "string"
+        },
+        {
+          "const": "LAK",
+          "type": "string"
+        },
+        {
+          "const": "LBP",
+          "type": "string"
+        },
+        {
+          "const": "LKR",
+          "type": "string"
+        },
+        {
+          "const": "LRD",
+          "type": "string"
+        },
+        {
+          "const": "LSL",
+          "type": "string"
+        },
+        {
+          "const": "LYD",
+          "type": "string"
+        },
+        {
+          "const": "MAD",
+          "type": "string"
+        },
+        {
+          "const": "MDL",
+          "type": "string"
+        },
+        {
+          "const": "MGA",
+          "type": "string"
+        },
+        {
+          "const": "MKD",
+          "type": "string"
+        },
+        {
+          "const": "MMK",
+          "type": "string"
+        },
+        {
+          "const": "MNT",
+          "type": "string"
+        },
+        {
+          "const": "MOP",
+          "type": "string"
+        },
+        {
+          "const": "MRU",
+          "type": "string"
+        },
+        {
+          "const": "MUR",
+          "type": "string"
+        },
+        {
+          "const": "MVR",
+          "type": "string"
+        },
+        {
+          "const": "MWK",
+          "type": "string"
+        },
+        {
+          "const": "MXN",
+          "type": "string"
+        },
+        {
+          "const": "MXV",
+          "type": "string"
+        },
+        {
+          "const": "MYR",
+          "type": "string"
+        },
+        {
+          "const": "MZN",
+          "type": "string"
+        },
+        {
+          "const": "NAD",
+          "type": "string"
+        },
+        {
+          "const": "NGN",
+          "type": "string"
+        },
+        {
+          "const": "NIO",
+          "type": "string"
+        },
+        {
+          "const": "NOK",
+          "type": "string"
+        },
+        {
+          "const": "NPR",
+          "type": "string"
+        },
+        {
+          "const": "NZD",
+          "type": "string"
+        },
+        {
+          "const": "OMR",
+          "type": "string"
+        },
+        {
+          "const": "PAB",
+          "type": "string"
+        },
+        {
+          "const": "PEN",
+          "type": "string"
+        },
+        {
+          "const": "PGK",
+          "type": "string"
+        },
+        {
+          "const": "PHP",
+          "type": "string"
+        },
+        {
+          "const": "PKR",
+          "type": "string"
+        },
+        {
+          "const": "PLN",
+          "type": "string"
+        },
+        {
+          "const": "PYG",
+          "type": "string"
+        },
+        {
+          "const": "QAR",
+          "type": "string"
+        },
+        {
+          "const": "RON",
+          "type": "string"
+        },
+        {
+          "const": "RSD",
+          "type": "string"
+        },
+        {
+          "const": "RUB",
+          "type": "string"
+        },
+        {
+          "const": "RWF",
+          "type": "string"
+        },
+        {
+          "const": "SAR",
+          "type": "string"
+        },
+        {
+          "const": "SBD",
+          "type": "string"
+        },
+        {
+          "const": "SCR",
+          "type": "string"
+        },
+        {
+          "const": "SDG",
+          "type": "string"
+        },
+        {
+          "const": "SEK",
+          "type": "string"
+        },
+        {
+          "const": "SGD",
+          "type": "string"
+        },
+        {
+          "const": "SHP",
+          "type": "string"
+        },
+        {
+          "const": "SLE",
+          "type": "string"
+        },
+        {
+          "const": "SLL",
+          "type": "string"
+        },
+        {
+          "const": "SOS",
+          "type": "string"
+        },
+        {
+          "const": "SRD",
+          "type": "string"
+        },
+        {
+          "const": "SSP",
+          "type": "string"
+        },
+        {
+          "const": "STN",
+          "type": "string"
+        },
+        {
+          "const": "SVC",
+          "type": "string"
+        },
+        {
+          "const": "SYP",
+          "type": "string"
+        },
+        {
+          "const": "SZL",
+          "type": "string"
+        },
+        {
+          "const": "THB",
+          "type": "string"
+        },
+        {
+          "const": "TJS",
+          "type": "string"
+        },
+        {
+          "const": "TMT",
+          "type": "string"
+        },
+        {
+          "const": "TND",
+          "type": "string"
+        },
+        {
+          "const": "TOP",
+          "type": "string"
+        },
+        {
+          "const": "TRY",
+          "type": "string"
+        },
+        {
+          "const": "TTD",
+          "type": "string"
+        },
+        {
+          "const": "TWD",
+          "type": "string"
+        },
+        {
+          "const": "TZS",
+          "type": "string"
+        },
+        {
+          "const": "UAH",
+          "type": "string"
+        },
+        {
+          "const": "UGX",
+          "type": "string"
+        },
+        {
+          "const": "USD",
+          "type": "string"
+        },
+        {
+          "const": "USN",
+          "type": "string"
+        },
+        {
+          "const": "UYI",
+          "type": "string"
+        },
+        {
+          "const": "UYU",
+          "type": "string"
+        },
+        {
+          "const": "UYW",
+          "type": "string"
+        },
+        {
+          "const": "UZS",
+          "type": "string"
+        },
+        {
+          "const": "VED",
+          "type": "string"
+        },
+        {
+          "const": "VES",
+          "type": "string"
+        },
+        {
+          "const": "VND",
+          "type": "string"
+        },
+        {
+          "const": "VUV",
+          "type": "string"
+        },
+        {
+          "const": "WST",
+          "type": "string"
+        },
+        {
+          "const": "XAF",
+          "type": "string"
+        },
+        {
+          "const": "XAG",
+          "type": "string"
+        },
+        {
+          "const": "XAU",
+          "type": "string"
+        },
+        {
+          "const": "XBA",
+          "type": "string"
+        },
+        {
+          "const": "XBB",
+          "type": "string"
+        },
+        {
+          "const": "XBC",
+          "type": "string"
+        },
+        {
+          "const": "XBD",
+          "type": "string"
+        },
+        {
+          "const": "XCD",
+          "type": "string"
+        },
+        {
+          "const": "XDR",
+          "type": "string"
+        },
+        {
+          "const": "XOF",
+          "type": "string"
+        },
+        {
+          "const": "XPD",
+          "type": "string"
+        },
+        {
+          "const": "XPF",
+          "type": "string"
+        },
+        {
+          "const": "XPT",
+          "type": "string"
+        },
+        {
+          "const": "XSU",
+          "type": "string"
+        },
+        {
+          "const": "XTS",
+          "type": "string"
+        },
+        {
+          "const": "XUA",
+          "type": "string"
+        },
+        {
+          "const": "XXX",
+          "type": "string"
+        },
+        {
+          "const": "YER",
+          "type": "string"
+        },
+        {
+          "const": "ZAR",
+          "type": "string"
+        },
+        {
+          "const": "ZMW",
+          "type": "string"
+        },
+        {
+          "const": "ZWL",
+          "type": "string"
+        }
+      ]
+    }
+  }
 }

@@ -21,6 +21,15 @@
     {
       "portfolioID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
       "portfolioName": "Prime Portfolio",
+      "portfolioPrice": {
+        "currency": "EUR",
+        "value": 8000000
+      },
+      "courtage": {
+        "hasCourtage": true,
+        "courtage": 3.57,
+        "courtageNote": "Die Provision beträgt 3,57% vom Kaufpreis zzgl. MwSt. und ist vom Käufer zu zahlen."
+      },
       "assets": [
         {
           "assetID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",

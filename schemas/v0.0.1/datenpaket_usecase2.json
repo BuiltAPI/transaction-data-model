@@ -21,6 +21,13 @@
     {
       "portfolioID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
       "portfolioName": "Prime Portfolio",
+      "portfolioPrice": {
+        "currency": "EUR",
+        "value": 8000000
+      },
+      "courtage": {
+        "hasCourtage": false
+      },
       "assets": [
         {
           "assetID": "56a5a31b-d850-40e6-a9db-dc26cfcda471",
